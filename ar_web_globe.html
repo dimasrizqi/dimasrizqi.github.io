@@ -3,11 +3,13 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam;'>
-      
-	<a-box position='0 0.5 0' material='opacity: 80;' color="#4CC3D9"></a-box>
-		<a-marker-camera preset='BELI'></a-marker-camera>
+      <a-sphere position="0 0.5 0" radius="0.5" material='opacity: 80;' src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg"></a-sphere>
+    
+		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
 	<!-- <a-scene>
+<a-box position='0 0.5 0' material='opacity: 80;' color="#4CC3D9"></a-box>
+	
       		<a-box position='0 0.5 0' material='opacity: 80;' color="#4CC3D9"></a-box>
 	<a-sphere position="0 0.5 0" radius="0.5" material='opacity: 80;' src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg"></a-sphere>
       <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
