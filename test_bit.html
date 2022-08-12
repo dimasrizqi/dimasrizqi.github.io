@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Jawaban test programer</title>
+</head>
+
+<body>
+    <h1>Jawaban test programer</h1>
+    <h5>A. SOAL QUERY SQL</h3>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col mb-1">
+                <div class="card">
+                    <h5 class="card-title">1. Total amount transaksi terminal SV0003</h5>
+                    <div class="card-body">
+                        <img src="soal_1_db.jpeg" class="card-img-top" alt="">
+
+                    </div>   
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <h5 class="card-title">2. Total amount transaksi kartu Bank C</h5>
+                    
+                    <div class="card-body">
+                        <img src="soal_2_db.jpeg" class="card-img-top" alt="">
+                        select sum(Amount) from 'tb_transaksiatm' where nomor_kartu LIKE '790%'
+                    </div>   
+                </div>
+            </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-1">
+            <div class="col mb-1">
+                <div class="card">
+                    <h5 class="card-title">3. Tampilkan report dengan kolom sebagai berikut :</h5>
+                    <div class="card-body">
+                        <img src="soal_3_db.jpeg" class="card-img-top" alt="">
+                        select tb_terminalatm.Merk, count(tb_terminalatm.Merk) AS 'Jumlah Transaksi',FORMAT(sum(tb_transaksiatm.Amount),0,'en_US') AS 'Total Amount' from tb_transaksiatm INNER JOIN tb_terminalatm on tb_transaksiatm.Terminal = tb_terminalatm.NomorTerminal GROUP by tb_terminalatm.Merk;
+                    </div>   
+                </div>
+            </div>
+        </div>
+
+
+    <h5>B. SOAL PSEUDO-CODE</h3>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">1. Tulis program untuk menampilkan 100 bilangan Ganjil pertama</h5>
+                        <p class="card-text">
+                        <p>Masukan batas: <input type="text" id="batas_soal_1" value="100"></p>
+                        <button onclick="myFunction()">Run Script Soal 1</button>
+                        </p>
+                        <pre>
+var ganjilnya = 1;
+var nomornya = 1;
+function jml_bilangan_ganjil(g) {
+    while (nomornya <= g) {
+        console.log(nomornya + '. ' + ganjilnya);
+        ganjilnya += 2;
+        nomornya++;
+    }
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <p id="soal1" class="card-text">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">2. Tulis program untuk menampilkan 100 bilangan Prima pertama</h5>
+                        <p class="card-text">
+                            <p>Masukan batas: <input type="text" id="batas_soal_2" value="100"></p>
+                            <button onclick="soal2()">Run Script</button>
+                        </p>
+<pre>
+function jml_bilangan_prima(p) {
+    let maks;
+    let x = 1, y;
+    let faktor;
+    let n = 1;
+    while (n <= p) {
+        faktor = 0;
+        for (y = x; y >= 1; y--) {
+            if (x % y == 0) {
+                faktor++;
+            }
+        }
+        if (faktor == 2) {
+        
+            console.log(n + '. ' + x);
+            n++;
+        }
+        x++;
+    }
+
+}
+</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <p id="hasil_soal_2" class="card-text">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">3. Tulis Program untuk menghitung angka factorial ( misal 5! )</h5>
+                        <p class="card-text">
+                            <p>Masukan batas: <input type="text" id="batas_soal_3" value="5"></p>
+                            <button onclick="run_soal_3()">Run Script</button>
+                        </p>
+<pre>
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+function faktorial(k) {
+    var angka = 1;
+    var echonya = 1;
+    var faktor = 1;
+    while (angka <= k) {
+        faktor = faktor * angka;
+        // console.log(echonya);
+        angka = angka + 1;
+        echonya += " x " + angka;
+    }
+    console.log(faktor + " = " + reverseString(echonya).substr(4))
+}
+</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <p id="hasil_soal_3" class="card-text">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">4. Buatkan sebuah fungsi untuk menghitung jumlah dari deret di bawah ini
+                            :</h5>
+                        <p class="card-text">
+                        <p>Masukan batas: <input type="text" id="batas_soal_4" value="5"></p>
+                        <button onclick="run_soal_4()">Run Script</button>
+
+                        </p>
+<pre>
+var i = 1;
+sum = (1 / (1 + Math.sqrt((1 + 1))));
+function deretnya(y) {
+    while (i <= y) {
+        (1 / (y + Math.sqrt((y + 2))));
+        i++;
+    }
+
+    console.log(sum);
+}
+</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <p id="hasil_soal_4" class="card-text">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">5. Soal Cerita: Brandon menabung sejumlah uang sebesar USD 100 di Bank
+                            Digital dengan interest
+                            rate sebesar 0.5% per tahun. Berapa jumlah uang yang dimiliki Brandon pada tahun ke n?</h5>
+                        
+                        <p class="card-text">
+                        <p>Masukan batas: <input type="text" id="batas_soal_5" value="5">tahun</p>
+                        <button onclick="run_soal_5()">Run Script</button>
+                        </p>
+<pre>
+var uang = 100;
+var ir = (0.5 / 100);
+function tahunnya(x) {
+
+    jumlah_uang = ((ir * x) * uang) + uang;
+    console.log("USD " + jumlah_uang);
+
+}
+</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <p id="hasil_soal_5" class="card-text">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">6. Buatkan sebuah fungsi untuk melakukan pencarian sebuah kata apakah
+                            terdapat di dalam sebuah
+                            kalimat.</h5>
+                        
+                        <p class="card-text">
+                        <!-- <p>Masukan batas: <input type="text" id="batas" value="100"></p> -->
+                        <button onclick="run_soal_6()">Run Script</button>
+                        </p>
+<pre>
+document.getElementById("hasil_soal_6").innerHTML +='red dead redemption '+ 'red dead redemption '.includes('dead')+'<br>';
+document.getElementById("hasil_soal_6").innerHTML += 'red dead redemption  '+ 'red dead redemption '.includes('de')+'<br>';
+document.getElementById("hasil_soal_6").innerHTML += 'red dead redemption '+ 'red dead redemption '.includes('homer')+'<br>';
+</pre>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <p id="hasil_soal_6" class="card-text">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+</body>
+
+<script>
+    function myFunction() {
+        jml_bilangan_ganjil(document.getElementById("batas_soal_1").value);
+    }
+    //soal 1 Run Script 100 bilangan ganjil pertama, jadi menampilkan 100 bilangan ganjil, 
+    var ganjilnya = 1;
+    var nomornya = 1;
+    function jml_bilangan_ganjil(g) {
+        while (nomornya <= g) {
+            document.getElementById("soal1").innerHTML += ganjilnya + ' | ';
+            console.log(nomornya + '. ' + ganjilnya);
+            ganjilnya += 2;
+            nomornya++;
+        }
+
+    }
+
+    function soal2() {
+        jml_bilangan_prima(document.getElementById("batas_soal_2").value);
+    }
+    //soal 2 Run Script 100 bilangan prima pertama, jadi menampilkan 100 bilangan prima
+    function jml_bilangan_prima(p) {
+        let maks;
+        let x = 1, y;
+        let faktor;
+        let n = 1;
+        while (n <= p) {
+            faktor = 0;
+            for (y = x; y >= 1; y--) {
+                if (x % y == 0) {
+                    faktor++;
+                }
+            }
+            if (faktor == 2) {
+            document.getElementById("hasil_soal_2").innerHTML += +x  + ' | ';
+                console.log(n + '. ' + x);
+                n++;
+            }
+            x++;
+        }
+
+    }
+
+    // jml_bilangan_prima(100);
+
+    //soal 3 program menghitung angka factorial
+    function run_soal_3() {
+        faktorial(document.getElementById("batas_soal_3").value);
+    }
+    function reverseString(str) {
+        return str.split("").reverse().join("");
+    }
+
+    function faktorial(k) {
+        var angka = 1;
+        var echonya = 1;
+        var faktor = 1;
+        while (angka <= k) {
+            faktor = faktor * angka;
+            // console.log(echonya);
+            angka = angka + 1;
+            echonya += " x " + angka;
+        }
+        document.getElementById("hasil_soal_3").innerHTML +=faktor + " = " + reverseString(echonya).substr(4);
+        console.log(faktor + " = " + reverseString(echonya).substr(4))
+    }
+    // faktorial(5)
+
+    //soal ke 4 sum deret
+    function run_soal_4() {
+        deretnya(document.getElementById("batas_soal_4").value);
+    }
+    var i = 1;
+    sum = (1 / (1 + Math.sqrt((1 + 1))));
+    function deretnya(y) {
+        while (i <= y) {
+            (1 / (y + Math.sqrt((y + 2))));
+            i++;
+        }
+        document.getElementById("hasil_soal_4").innerHTML =sum;
+
+        console.log(sum);
+    }
+    // deretnya(2)
+
+
+    // soal ke 5
+    function run_soal_5() {
+        tahunnya(document.getElementById("batas_soal_5").value);
+    }
+    var uang = 100;
+    var ir = (0.5 / 100);
+    function tahunnya(x) {
+
+        jumlah_uang = ((ir * x) * uang) + uang;
+        console.log("USD " + jumlah_uang);
+        document.getElementById("hasil_soal_5").innerHTML ="USD " + jumlah_uang;
+
+    }
+    // tahunnya(5)
+    
+    //soal ke 6
+//     Ifexist(“dead”,”red dead redemption”) menghasilkan true
+// Ifexist(“de”,”red dead redemption”) menghasilkan true
+// Ifexist(“homer”,”red dead redemption”) menghasilkan false
+function run_soal_6(){
+    document.getElementById("hasil_soal_6").innerHTML +='red dead redemption '+ 'red dead redemption '.includes('dead')+'<br>';
+    document.getElementById("hasil_soal_6").innerHTML += 'red dead redemption  '+ 'red dead redemption '.includes('de')+'<br>';
+    document.getElementById("hasil_soal_6").innerHTML += 'red dead redemption '+ 'red dead redemption '.includes('homer')+'<br>';
+
+    // console.log("red dead redemption".includes('dead'));
+}
+
+
+</script>
+
+</html>
