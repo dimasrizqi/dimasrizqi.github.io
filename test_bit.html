@@ -175,15 +175,13 @@ function faktorial(k) {
 
                         </p>
 <pre>
-var i = 1;
-sum = (1 / (1 + Math.sqrt((1 + 1))));
 function deretnya(y) {
     while (i <= y) {
-        (1 / (y + Math.sqrt((y + 2))));
+        sumnya += (1 / (y + Math.sqrt((y + 2))));
         i++;
-    }
+}
 
-    console.log(sum);
+console.log(sumnya);
 }
 </pre>
                     </div>
@@ -193,8 +191,10 @@ function deretnya(y) {
                 <div class="card">
                     <div class="card-body">
                         <p id="hasil_soal_4" class="card-text">
-
                         </p>
+                        <p>Ini rumusnya: $sum^(n>0) = 1/(1+sqrtn)+$</p>                          
+
+                        
                     </div>
                 </div>
             </div>
@@ -276,6 +276,17 @@ document.getElementById("hasil_soal_6").innerHTML += 'red dead redemption '+ 're
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
 </body>
+<script id="script_math">
+    MathJax = {
+    loader: {load: ['input/asciimath', 'output/chtml', 'ui/menu']},
+    asciimath: {
+      delimiters: [['$','$'], ['`','`']]
+    }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js">
+    </script>
 
 <script>
     function myFunction() {
@@ -350,15 +361,19 @@ document.getElementById("hasil_soal_6").innerHTML += 'red dead redemption '+ 're
         deretnya(document.getElementById("batas_soal_4").value);
     }
     var i = 1;
-    sum = (1 / (1 + Math.sqrt((1 + 1))));
+    var sumnya = (1 / (1 + Math.sqrt((1 + 1))));
+    var rumusnya = '$sum^(n>0) = 1/(1+sqrt1)+$';
     function deretnya(y) {
         while (i <= y) {
-            (1 / (y + Math.sqrt((y + 2))));
+            sumnya += (1 / (y + Math.sqrt((y + 2))));
+            rumusnya += ' $sum^(n>0) = 1/(1+sqrt'+y+')+$ ';
             i++;
         }
-        document.getElementById("hasil_soal_4").innerHTML =sum;
+        document.getElementById("hasil_soal_4").innerHTML = sumnya + ' = ' + rumusnya;
+        document.getElementById("script_math");
 
-        console.log(sum);
+
+        // console.log(sumnya);
     }
     // deretnya(2)
 
